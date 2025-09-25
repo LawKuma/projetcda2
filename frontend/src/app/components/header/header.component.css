@@ -1,0 +1,49 @@
+/* Color of the links BEFORE and AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #ff8800; /* Couleur des liens avant et après le défilement */
+}
+
+/* Color and transition of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #ffffff; /* Couleur de fond de la navbar lorsqu'elle est scrollée */
+  transition: background-color 0.3s ease; /* Transition en douceur */
+}
+
+/* Autres styles existants ... */
+
+/*
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}*/
+.navbar-brand img {
+  width: 60px; /* ou utilisez height: auto; pour définir la hauteur automatiquement en conservant les proportions */
+}
+.message-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #fff;
+  width: 100%;
+  background-color: #000000; /* Couleur de fond du message */
+  text-align: center;
+  padding: 3px 0;
+  z-index: 1000;
+}
+.message {
+  margin: 0;
+}
+.navbar {
+  margin-top: 30px;
+  top: auto;
+}
+.d-flex input[type="search"],
+.d-flex button[type="submit"] {
+  background-color: rgba(255, 255, 255, 0.5); /* Couleur de fond semi-transparente */
+  border: none; /* Supprimer la bordure si nécessaire */
+  opacity: 0.8; /* Opacité du formulaire et des boutons */
+}

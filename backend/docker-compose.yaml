@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: vrunkdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: bxbjimg12526
+    ports:
+      - "5432:5432" # ← enlève ou change (ex: "5433:5432") si 5432 est déjà occupé en local
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d vrunkdb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  app:
+    build:
+      context: ./backend # ← laisse comme ça si ton Dockerfile est dans backend/
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SERVER_PORT: 8080
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: vrunkdb
+      DB_USERNAME: postgres
+      DB_PASSWORD: bxbjimg12526
+      STRIPE_ENABLED: "false"
+      # JAVA_TOOL_OPTIONS est lu automatiquement par la JVM (contrairement à JAVA_OPTS)
+      JAVA_TOOL_OPTIONS: "-XX:MaxRAMPercentage=75.0"
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+volumes:
+  db-data:

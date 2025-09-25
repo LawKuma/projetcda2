@@ -1,0 +1,36 @@
+/* Carousel base class */
+.carousel {
+    margin-bottom: 4rem;
+  }
+  /* Since positioning the image, we need to help out the caption */
+  .carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+  }
+  
+  /* Declare heights because of positioning of img element */
+  .carousel-item {
+    height: 40rem; /* Ajuste la hauteur du carousel-item à la taille souhaitée */
+  }
+  .carousel-item > img {
+    position: relative; /* Assurez-vous d'utiliser relative pour que le positionnement fonctionne */
+    top: 50%; /* Place le point de départ de l'image à 50% de la hauteur de son conteneur */
+    left: 50%; /* Place le point de départ de l'image à 50% de la largeur de son conteneur */
+    transform: translate(-50%, -50%); /* Translate l'image de -50% de sa propre largeur et hauteur, la centrant ainsi */
+    width: 100%; /* Utilisez une largeur de 100% pour que l'image remplisse son conteneur */
+    height: 100%; /* Ajuste la hauteur à 100% pour maintenir les proportions de l'image */
+    object-fit: cover; /* Permet de remplir l'espace de l'image tout en conservant les proportions */
+  }
+  h1{
+    color: orange;
+    font-weight: bold; /* Pour mettre en gras */
+  }
+  .btn-primary {
+    background-color: rgba(255, 166, 0, 0.733); /* Change la couleur du bouton en rouge */
+    outline: none; /* Supprime la bordure de focus */
+    border: 1px solid black; /* Ajoute une bordure noire */
+  }
+  .p{
+   font-weight: bold; 
+   border: 1px solid black; /* Ajoute une bordure noire */
+  }
